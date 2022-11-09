@@ -35,11 +35,15 @@ export class App extends React.Component {
   render() {
     const { good, neutral, bad } = this.state;
     const isFeedback = Object.values(this.state).find(value => value > 0);
+    const options = Object.keys(this.state);
 
     return (
       <div className={css.container}>
         <Section title="Please Leave feedback">
-          <FeedbackOptions onLeaveFeedback={this.onBtnClick} />
+          <FeedbackOptions
+            options={options}
+            onLeaveFeedback={this.onBtnClick}
+          />
         </Section>
         <Section title="Statistics">
           {isFeedback ? (
