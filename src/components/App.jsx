@@ -35,7 +35,7 @@ export class App extends React.Component {
   render() {
     const { good, neutral, bad } = this.state;
     const isFeedback = Object.values(this.state).find(value => value > 0);
-    const options = Object.keys(this.state);
+    const options = ['good', 'neutral', 'bad'];
 
     return (
       <div className={css.container}>
